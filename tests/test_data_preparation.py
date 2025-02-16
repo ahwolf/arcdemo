@@ -21,7 +21,7 @@ class TestDataPreparation(unittest.TestCase):
 
         # Sample data
         data = {
-            "timestamp": pd.date_range(start="2024-02-15 12:00:00", periods=5, freq="H"),
+            "timestamp": pd.date_range(start="2024-02-15 12:00:00", periods=5, freq="h"),
             "lat": np.random.uniform(10, 20, 5),
             "lon": np.random.uniform(30, 40, 5),
         }
