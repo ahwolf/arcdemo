@@ -45,7 +45,7 @@ class DataPreparation:
 
         # Ensure timestamp is in datetime format
         df = self.geohashed_df.copy()
-        # df["timestamp"] = pd.to_datetime(df["timestamp"])
+        df["timestamp"] = pd.to_datetime(df["timestamp"])
         df = df.sort_values(by=["geohash", "timestamp"])
         df.set_index("timestamp", inplace=True)
 
