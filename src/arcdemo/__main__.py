@@ -2,9 +2,9 @@
 
 # %% IMPORTS
 
-from arcdemo import scripts
+from arcdemo import logger
 
 # %% MAIN
 
 if __name__ == "__main__":
-    scripts.main()
+    logger.info("Running the main script.")
