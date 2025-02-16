@@ -2,7 +2,12 @@ data_generation:
   number_of_samples: 1000
   local_data_file: ../data/call_logs.csv
   bbox:
-    min_lat: 37.7749
-    max_lat: 37.7755
-    min_lon: -122.4194
-    max_lon: -122.4184
+    min_lat: 37.77
+    max_lat: 37.82
+    min_lon: -122.41
+    max_lon: -122.45
+
+data_preparation:
+  input_data_file: ../data/call_logs.csv
+  history_in_hours: 3
+  output_data_file: ../data/call_logs_prepared.csv

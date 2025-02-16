@@ -47,5 +47,5 @@ class DataGeneration:
         Save the generated points to a local file.
         """
         points = self._generate_points()
-        points.to_csv(self.config.local_data_file, index=False)
+        points.to_csv(self.config.local_data_file, index=False, mode="a", header=False)
         return points
