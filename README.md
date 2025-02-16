@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# arcdemo
-=======
-# arcdemo
+# ARC demo
 
 [![check.yml](https://github.com/ahwolf/arcdemo/actions/workflows/check.yml/badge.svg)](https://github.com/ahwolf/arcdemo/actions/workflows/check.yml)
 [![publish.yml](https://github.com/ahwolf/arcdemo/actions/workflows/publish.yml/badge.svg)](https://github.com/ahwolf/arcdemo/actions/workflows/publish.yml)
@@ -11,17 +8,20 @@
 
 Workflow for call logs.
 
-# Installation
+ARC Demo is an MLOps pipeline designed for an end-to-end machine learning case study. This repository provides a structured scaffolding to develop a complete ML pipeline, covering data ingestion, preparation, training, evaluation, deployment, and monitoring.
 
-Use the package manager [uv](https://docs.astral.sh/uv/):
+Currently, the project includes data ingestion and data preparation steps, with future expansions planned for:
+	•	Model Training & Evaluation
+	•	Monitoring & Retraining Automation
+	•	Model Deployment
 
-```bash
-uv sync
-```
+# Completed Steps
 
-# Usage
+1. Data Ingestion
+	•	Reads raw data from CSV files (or other sources like APIs, databases, cloud storage).
+	•	Saves the data for preprocessing.
 
-```bash
-uv run arcdemo
-```
->>>>>>> 9accf60 (initial commit)
+2. Data Preparation
+	•	Truncates historical data to keep only the last n hours.
+	•	Geohashes location data (latitude, longitude) for spatial analysis.
+	•	Aggregates data into fixed time intervals (TIME_GAP in seconds).
