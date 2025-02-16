@@ -1,5 +1,5 @@
 from arcdemo.constants import CONFIG_FILE_PATH
-from arcdemo.entity.config_entity import BoundingBox, DataGenerationConfig
+from arcdemo.entity.config_entity import BoundingBox, DataGenerationConfig, DataPreparationConfig
 from arcdemo.utils.common import read_config
 
 
@@ -22,3 +22,11 @@ class ConfigurationManager:
         )
 
         return data_generation_config
+
+    def get_data_preparation_config(self) -> DataPreparationConfig:
+        data_preparation_config = DataPreparationConfig(
+            input_data_file=self.config.data_preparation.input_data_file,
+            history_in_hours=self.config.data_preparation.history_in_hours,
+            output_data_file=self.config.data_preparation.output_data_file,
+        )
+        return data_preparation_config

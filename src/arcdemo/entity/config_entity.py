@@ -15,3 +15,10 @@ class DataGenerationConfig:
     number_of_samples: int
     local_data_file: Path
     bbox: BoundingBox
+
+
+@dataclass
+class DataPreparationConfig:
+    input_data_file: str
+    history_in_hours: int
+    output_data_file: str
