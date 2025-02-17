@@ -3,6 +3,7 @@ import pandas as pd
 
 from arcdemo.constants import TIME_GAP
 from arcdemo.entity.config_entity import DataPreparationConfig
+from arcdemo.logger import logger
 
 
 class DataPreparation:
@@ -66,6 +67,10 @@ class DataPreparation:
         """
         Run the full pipeline: truncate → geohash → aggregate.
         """
+        logger.info("Starting data processing pipeline...")
         self.truncate_call_logs()
+        logger.info("Truncated call logs...Starting geohashing...")
         self.geohash_call_logs()
+        logger.info("Geohashing done...Starting aggregation...")
         self.aggregate_call_logs()
+        logger.info("Aggregation done...Data processing pipeline completed.")
