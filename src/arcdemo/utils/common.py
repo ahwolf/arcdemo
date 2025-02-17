@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import yaml
+import yaml  # type: ignore
 from box import ConfigBox
 
 from arcdemo import logger

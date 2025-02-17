@@ -32,6 +32,8 @@ class DataPreparation:
         Generate a geohash for each datapoint.
         """
         self.geohashed_df = self.df.copy()
+        if self.geohashed_df is None:
+            raise ValueError("Error: No logs in last 3 hours or call logs is empty")
         self.geohashed_df["geohash"] = self.geohashed_df.apply(
             lambda x: geohash.encode(x["lat"], x["lon"], precision=5), axis=1
         )

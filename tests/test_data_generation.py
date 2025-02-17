@@ -1,11 +1,12 @@
 import os
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 import pandas as pd
 
 from arcdemo.components.data_generation import DataGeneration
-from arcdemo.entity.config_entity import DataGenerationConfig
+from arcdemo.entity.config_entity import BoundingBox, DataGenerationConfig
 
 
 class TestDataGeneration(unittest.TestCase):
@@ -13,10 +14,11 @@ class TestDataGeneration(unittest.TestCase):
 
     def setUp(self):
         """Setup configuration for DataGeneration tests."""
+        bbox = BoundingBox(min_lat=10, max_lat=20, min_lon=30, max_lon=40)
         self.config = DataGenerationConfig(
             number_of_samples=5,
-            bbox=type("BBox", (), {"min_lat": 10, "max_lat": 20, "min_lon": 30, "max_lon": 40}),
-            local_data_file="test_generated_data.csv",
+            bbox=bbox,
+            local_data_file=Path("test_generated_data.csv"),
         )
         self.data_generator = DataGeneration(self.config)
 

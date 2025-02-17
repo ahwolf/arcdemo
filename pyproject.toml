@@ -129,7 +129,7 @@ update_changelog_on_bump = true
 [tool.coverage.run]
 branch = true
 source = ["src"]
-omit = ["__main__.py"]
+omit = ["__main__.py", "src/arcdemo/pipeline/stage_01_data_generation.py", "src/arcdemo/pipeline/stage_02_data_preparation.py"]
 
 [tool.mypy]
 pretty = true
@@ -157,6 +157,10 @@ convention = "google"
 "tests/*.py" = ["D100", "D103"]
 
 # SYSTEMS
+
+
+[tool.poetry.group.dev.dependencies]
+types-pyyaml = "^6.0.12.20241230"
 
 [build-system]
 requires = ["hatchling"]

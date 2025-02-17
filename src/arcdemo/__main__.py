@@ -13,8 +13,8 @@ if __name__ == "__main__":
     STAGE_NAME = "Data Generation stage"
     try:
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-        obj = DataGenerationPipeline()
-        obj.main()
+        gen_obj = DataGenerationPipeline()
+        gen_obj.main()
         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
         logger.exception(e)
@@ -23,8 +23,8 @@ if __name__ == "__main__":
     STAGE_NAME = "Data Preparation stage"
     try:
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-        obj = DataPreparationPipeline()
-        obj.main()
+        prep_obj = DataPreparationPipeline()
+        prep_obj.main()
         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
         logger.exception(e)

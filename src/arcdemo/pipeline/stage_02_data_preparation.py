@@ -20,7 +20,9 @@ class DataPreparationPipeline:
 
         logger.info(
             "Truncated input data and aggregated %s to %s",
-            len(data_preparation.aggregated_df),
+            len(data_preparation.aggregated_df)
+            if data_preparation.aggregated_df is not None
+            else 0,
             data_preparation_config.output_data_file,
         )
 

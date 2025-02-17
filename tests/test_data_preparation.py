@@ -44,6 +44,8 @@ class TestDataPreparation(unittest.TestCase):
     def test_geohash_call_logs(self):
         """Test if geohashes are correctly generated."""
         self.data_preparation.geohash_call_logs()
+        if self.data_preparation.geohashed_df is None:
+            raise ValueError("Error: geohashed_df is None")
         self.assertIn("geohash", self.data_preparation.geohashed_df.columns)
         self.assertTrue(self.data_preparation.geohashed_df["geohash"].notnull().all())
 
@@ -52,6 +54,8 @@ class TestDataPreparation(unittest.TestCase):
         self.data_preparation.geohash_call_logs()
         self.data_preparation.aggregate_call_logs()
         aggregated_df = self.data_preparation.aggregated_df
+        if aggregated_df is None:
+            raise ValueError("Error: aggregated_df is None")
         self.assertIn("count", aggregated_df.columns)
         self.assertGreaterEqual(aggregated_df["count"].sum(), 1)
 
