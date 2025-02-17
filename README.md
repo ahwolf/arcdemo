@@ -8,6 +8,7 @@
 
 Workflow for call logs.
 
+
 ARC Demo is an MLOps pipeline designed for an end-to-end machine learning case study. This repository provides a structured scaffolding to develop a complete ML pipeline, covering data ingestion, preparation, training, evaluation, deployment, and monitoring.
 
 Currently, the project includes data ingestion and data preparation steps, with future expansions planned for:
